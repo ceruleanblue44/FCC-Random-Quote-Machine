@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<link rel="stylesheet" href="css/bootstrap.min.css" />
+		<link rel="stylesheet" href="styles.css" />
+		<title>Random Quote Machine</title>
+		<script
+			src="https://kit.fontawesome.com/0cecb320f1.js"
+			crossorigin="anonymous"
+		></script>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+	</head>
+	<body>
+		<div
+			class="container text align-items-center justify-content-center col-10 col-md-7"
+		>
+			<div
+				id="quote-box"
+				class="quote-box text-center text align-items-center justify-content-center"
+			>
+				<div
+					id="text"
+					class="col text align-items-center justify-content-center"
+				></div>
+				<div
+					id="author"
+					class="col author align-items-center justify-content-center"
+				></div>
+
+				<div id="buttons" class="col d-flex justify-content-between">
+					<a class="button" id="tweet-quote" title="Tweet it!" target="_blank">
+						<i class="fab fa-twitter fa-2x"></i>
+					</a>
+					<button class="button" id="new-quote">
+						New quote
+					</button>
+				</div>
+			</div>
+		</div>
+	</body>
+	<script>
+		function getQuotes() {
+			$.getJSON('https://api.quotable.io/random', function (data) {
+				$('#text').html('<h5>' + '" ' + data.content + ' "' + '</h5>');
+				$('#author').html('<h6>' + data.author + '</h6>');
+				$('#tweet-quote').attr(
+					'href',
+					'https://twitter.com/intent/tweet?text=' +
+						encodeURIComponent('"' + data.content + '"' + ' - ' + data.author)
+				);
+			});
+		}
+		$(document).ready(function () {
+			getQuotes();
+		});
+		$('#new-quote').on('click', getQuotes);
+	</script>
+	<script src="js/bootstrap.min.js"></script>
+	<script src="https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js"></script>
+</html>

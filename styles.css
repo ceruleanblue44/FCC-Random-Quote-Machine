@@ -1,0 +1,70 @@
+@import url('https://fonts.googleapis.com/css2?family=Special+Elite&display=swap');
+
+* {
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	font-family: 'Special Elite', cursive;
+	font-size: 1em;
+	line-height: 1.8em;
+	height: 100vh;
+	background-color: azure;
+	background-image: url('typewriter3.jpg');
+	background-size: cover;
+}
+
+.quote-box {
+	height: 100%;
+	background-color: mediumturquoise;
+	background-image: url('lightpaperfibers.png');
+	border-radius: 5px;
+	margin-top: 10vh;
+}
+
+a {
+	text-decoration: none;
+	color: white;
+}
+
+a:hover,
+a:active {
+	background-color: #345e4b;
+	color: white;
+}
+
+.text {
+	padding-top: 1em;
+}
+
+.author {
+	text-align: right;
+	padding-top: 0.3em;
+}
+
+.button {
+	text-align: center;
+	border-radius: 3px;
+	font-family: inherit;
+	font-size: 0.8em;
+	margin: 0.8em;
+	padding: 0.3em 0.6em 0.1em 0.6em;
+	background-color: #214a3b;
+	color: white;
+	border: none;
+	cursor: pointer;
+}
+.button:hover {
+	background-color: #345e4b;
+}
+button:focus {
+	outline: 0;
+}
+
+#tweet-quote {
+	vertical-align: end;
+	text-align: center;
+	padding: 0.6em 0.6em 0 0.6em;
+}
+
